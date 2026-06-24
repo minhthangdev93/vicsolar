@@ -2,4 +2,14 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/qeutcced/public_html/wp-content/themes/electro-child/
-    - /bin/cp -R /home/qeutcced/repositories/vicsolar/* $DEPLOYPATH
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R assets $DEPLOYPATH
+    - /bin/cp -R inc $DEPLOYPATH
+    - /bin/cp -R template-parts $DEPLOYPATH
+    - /bin/cp -R acf-json $DEPLOYPATH
+    - /bin/cp -R js $DEPLOYPATH
+    - /bin/cp functions.php $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
+    - /bin/cp custom-color.css $DEPLOYPATH
+    - /bin/cp template-landing-solar.php $DEPLOYPATH
+    - /bin/cp screenshot.png $DEPLOYPATH
