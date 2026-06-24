@@ -1,0 +1,322 @@
+/**
+ * Landing Solar — shared component classes (intro, tier headers, hero, brands)
+ */
+
+/* --- Price page intro (sections 04–08) --- */
+.vs-price-page-intro {
+  font-family: Montserrat, Inter, Segoe UI, Roboto, Arial, sans-serif;
+  width: 100%;
+  padding: 18px 16px 12px;
+  margin: 0;
+  box-sizing: border-box;
+  background: transparent;
+  text-align: center;
+}
+
+.vs-price-page-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 120, 40, 0.08);
+  border: 1.2px solid rgba(255, 120, 40, 0.32);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.05);
+  color: #ff6a1a;
+  font-weight: 850;
+  font-size: 13px;
+  line-height: 1;
+  box-sizing: border-box;
+  margin: 0 0 10px;
+}
+
+.vs-price-page-badge span {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.vs-price-page-title {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 3.1vw, 44px);
+  font-weight: 950;
+  letter-spacing: -0.4px;
+  line-height: 1.12;
+  background: linear-gradient(90deg, #ffb15a 0%, #ff7a1a 45%, #ee5e09 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 14px 34px rgba(238, 94, 9, 0.14);
+}
+
+.vs-price-page-underline {
+  width: 140px;
+  height: 4px;
+  margin: 0 auto 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffb15a, #ff7a1a, #ee5e09);
+  box-shadow: 0 12px 28px rgba(238, 94, 9, 0.16);
+}
+
+.vs-price-page-subtitle {
+  margin: 0;
+  font-size: clamp(13px, 1.25vw, 17px);
+  font-weight: 550;
+  line-height: 1.55;
+  color: rgba(11, 19, 32, 0.82);
+}
+
+/* --- Tier header (section 04 bar + 05–08 compact titles) --- */
+.vs-price-tier-header {
+  font-family: Montserrat, Inter, Segoe UI, Roboto, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.vs-price-tier-header__inner {
+  width: 100%;
+  background: transparent;
+  padding: 10px 16px;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.vs-price-tier-header__title {
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+  line-height: 1.08;
+  font-weight: 950;
+  color: #f05a12;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+}
+
+.vs-price-page-intro .vs-price-tier-header__title {
+  margin: 0;
+  font-size: clamp(13px, 1.25vw, 17px);
+  font-weight: 550;
+  line-height: 1.55;
+  color: rgba(11, 19, 32, 0.82);
+  text-transform: none;
+  padding: 0;
+}
+
+.vs-price-page-intro .vs-price-tier-header__title span {
+  color: #f05a12;
+  font-size: 28px;
+  font-weight: 950;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.vs-price-tier-header__subtitle {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.35;
+  font-weight: 800;
+  color: rgba(240, 90, 18, 0.92);
+}
+
+.vs-price-page-intro .vs-price-tier-header__subtitle {
+  margin: 0;
+  font-size: clamp(13px, 1.25vw, 17px);
+  font-weight: 550;
+  line-height: 1.55;
+  color: rgba(11, 19, 32, 0.82);
+}
+
+.vs-price-page-intro .vs-price-tier-header__subtitle span {
+  color: rgba(240, 90, 18, 0.92);
+  font-size: 14px;
+  font-weight: 800;
+  background-color: transparent;
+}
+
+/* --- Hero (section 01) --- */
+.vs-hero-intro {
+  font-family: Montserrat, Inter, Segoe UI, Roboto, Arial, sans-serif;
+  background: transparent;
+}
+
+.vs-hero-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.vs-hero-title {
+  margin: 0;
+  font-size: clamp(26px, 3vw, 44px);
+  font-weight: 900;
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.vs-hero-underline {
+  margin-top: 14px;
+}
+
+.vs-hero-underline-bar {
+  height: 3px;
+  margin: 0 auto;
+  border-radius: 999px;
+}
+
+.vs-hero-underline-bar--wide {
+  width: 168px;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.vs-hero-underline-bar--narrow {
+  width: 68px;
+  margin: 6px auto 0;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+/* --- Brands block --- */
+.vs-brands-title-block {
+  font-family: Montserrat, Inter, Segoe UI, Roboto, Arial, sans-serif;
+  padding: 14px 12px;
+  margin: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.vs-brands-title-block__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.vs-brands-title-block__heading {
+  font-size: clamp(18px, 2.15vw, 30px);
+  font-weight: 900;
+  letter-spacing: -0.22px;
+  line-height: 1.18;
+  text-transform: uppercase;
+  margin: 0;
+  background: linear-gradient(90deg, #ffcc7a 0%, #ff8a2b 35%, #ee5e09 70%, #a93f0e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.vs-brands-title-block__heading span {
+  font-size: 90%;
+}
+
+.vs-brands-title-block__underline {
+  width: 120px;
+  height: 3px;
+  margin: 10px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ffcc7a 0%, #ff8a2b 45%, #ee5e09 85%, #a93f0e 100%);
+  box-shadow: 0 8px 18px rgba(238, 94, 9, 0.12);
+  position: relative;
+}
+
+.vs-brands-subtitle-block {
+  font-family: Montserrat, Inter, Segoe UI, Roboto, Arial, sans-serif;
+  padding: 14px 16px;
+  margin: 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.vs-brands-subtitle-block__inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.vs-brands-subtitle-block__text {
+  font-size: clamp(16px, 1.8vw, 22px);
+  font-weight: 850;
+  letter-spacing: -0.1px;
+  line-height: 1.2;
+  margin: 0;
+  background: linear-gradient(90deg, #ff9a3c 0%, #ee5e09 55%, #b84a12 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 10px 24px rgba(238, 94, 9, 0.18);
+}
+
+.vs-brands-block .vs-brand-card-outer {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+.vs-brands-block .vs-brand-card-shell {
+  padding: 0;
+  margin: 0;
+}
+
+.vs-brands-block .vs-brand-card {
+  margin: 12px 0 0;
+  border-radius: 18px;
+  background:
+    radial-gradient(120% 160% at 12% 8%, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 52%),
+    linear-gradient(180deg, #f7f7f9 0%, #ffffff 100%);
+  border: 1px solid rgba(17, 24, 39, 0.06);
+  box-shadow: 0 18px 52px rgba(8, 18, 40, 0.1);
+  padding: 14px 12px 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+.vs-brands-block .vs-brand-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.vs-brands-block .vs-brand-card-cta a {
+  background:
+    radial-gradient(120% 160% at 15% 10%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 55%),
+    linear-gradient(90deg, #f05a12 0%, #ff8a2c 55%, #ffb15a 100%);
+  box-shadow: 0 14px 34px rgba(240, 90, 18, 0.22);
+  text-decoration: none !important;
+}
+
+/* Inside article section — full content width */
+#section_387130023 .vs-brands-title-block__inner,
+#section_387130023 .vs-brands-subtitle-block__inner {
+  max-width: 100%;
+}
+
+#section_387130023 .vns-a .vs-brands-block a {
+	text-decoration: none;
+}
+
+@media (max-width: 599px) {
+	.vs-brands-title-block {
+		padding: 12px 0;
+	}
+
+	.vs-brands-title-block__heading {
+		font-size: clamp(16px, 5vw, 22px);
+		line-height: 1.22;
+	}
+
+	.vs-brands-subtitle-block {
+		padding: 10px 0;
+	}
+
+	.vs-brands-subtitle-block__text {
+		font-size: clamp(14px, 4vw, 18px);
+	}
+}
