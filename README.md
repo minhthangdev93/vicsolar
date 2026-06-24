@@ -34,13 +34,13 @@ assets/js/              # landing-factory-slider.js
 _tools/                 # Script dev (extract defaults), không dùng runtime
 ```
 
-## Deploy lên production
+## Deploy lên production (cPanel Git)
 
-1. Backup site + database production
-2. Upload/sync thư mục theme (git pull hoặc FTP)
-3. Đảm bảo ACF Pro active
-4. Vào **Landing Solar** → **Lưu nội dung** một lần
-5. Xóa cache (plugin/CDN) → Ctrl+F5 kiểm tra frontend
+1. cPanel → **Git™ Version Control** → Clone `https://github.com/minhthangdev93/vicsolar.git`
+2. **Repository Path:** `repositories/vicsolar` (không clone thẳng vào `public_html`)
+3. Sau mỗi lần push GitHub: **Manage** → **Pull or Deploy** → **Deploy HEAD commit**
+4. File `.cpanel.yml` copy code sang `public_html/wp-content/themes/electro-child/`
+5. Vào **Landing Solar** → **Lưu nội dung** (lần đầu) → xóa cache → Ctrl+F5
 
 ## Ghi chú
 
