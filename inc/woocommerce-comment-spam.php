@@ -182,24 +182,6 @@ function electro_child_comment_spam_approve( $approved, $commentdata ) {
 add_filter( 'pre_comment_approved', 'electro_child_comment_spam_approve', 20, 2 );
 
 /**
- * WooCommerce review form: require name + email.
- *
- * @param array<string, mixed> $fields Default fields.
- * @return array<string, mixed>
- */
-function electro_child_wc_review_require_rating( $fields ) {
-	if ( ! is_product() ) {
-		return $fields;
-	}
-
-	$fields['author']['required'] = true;
-	$fields['email']['required']  = true;
-
-	return $fields;
-}
-add_filter( 'comment_form_default_fields', 'electro_child_wc_review_require_rating' );
-
-/**
  * Hide website URL field on blog posts (bots abuse it; readers rarely need it).
  *
  * @param array<string, mixed> $fields Default fields.
