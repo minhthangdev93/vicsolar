@@ -36,7 +36,7 @@ $col_id    = 'col-brand-' . $index;
 			<div class="box has-hover vs-brand-unit box-text-bottom">
 				<div class="box-image vs-brand-product-img">
 					<div>
-						<img decoding="async" width="300" height="300" src="<?php echo esc_url( $img_url ); ?>" class="attachment-medium size-medium" alt="<?php echo esc_attr( wp_strip_all_tags( $title ) ); ?>">
+						<img decoding="async" loading="lazy" width="300" height="300" src="<?php echo esc_url( $img_url ); ?>" class="attachment-medium size-medium" alt="<?php echo esc_attr( wp_strip_all_tags( $title ) ); ?>">
 					</div>
 				</div>
 				<div class="box-text text-center">
@@ -46,7 +46,7 @@ $col_id    = 'col-brand-' . $index;
 				<div class="icon-box-img vs-brand-product-img">
 					<div class="icon">
 						<div class="icon-inner">
-							<img decoding="async" width="300" height="300" src="<?php echo esc_url( $img_url ); ?>" class="attachment-medium size-medium" alt="<?php echo esc_attr( wp_strip_all_tags( $title ) ); ?>">
+							<img decoding="async" loading="lazy" width="300" height="300" src="<?php echo esc_url( $img_url ); ?>" class="attachment-medium size-medium" alt="<?php echo esc_attr( wp_strip_all_tags( $title ) ); ?>">
 						</div>
 					</div>
 				</div>

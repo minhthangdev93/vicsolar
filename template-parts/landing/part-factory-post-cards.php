@@ -36,23 +36,23 @@ $post_count               = (int) $factory_cards_query->post_count;
 	</button>
 	<div class="vs-factory-grid">
 		<?php
+		$card_index = 0;
 		while ( $factory_cards_query->have_posts() ) :
 			$factory_cards_query->the_post();
 			$permalink = get_permalink();
 			$excerpt   = electro_child_landing_card_excerpt( get_the_ID() );
+			$loading   = 0 === $card_index ? 'eager' : 'lazy';
 			?>
 			<article <?php post_class( 'vs-factory-card' ); ?>>
 				<a class="vs-factory-card-media" href="<?php echo esc_url( $permalink ); ?>" aria-label="<?php the_title_attribute(); ?>">
 					<?php if ( has_post_thumbnail() ) : ?>
 						<?php
-						the_post_thumbnail(
-							'medium_large',
-							array(
-								'class'    => 'vs-factory-card-img',
-								'loading'  => 'lazy',
-								'decoding' => 'async',
-							)
+						$thumb_attrs = array(
+							'class'    => 'vs-factory-card-img',
+							'loading'  => $loading,
+							'decoding' => 'async',
 						);
+						the_post_thumbnail( 'medium_large', $thumb_attrs );
 						?>
 					<?php else : ?>
 						<span class="vs-factory-card-placeholder" aria-hidden="true"></span>
@@ -72,6 +72,7 @@ $post_count               = (int) $factory_cards_query->post_count;
 				</div>
 			</article>
 			<?php
+			++$card_index;
 		endwhile;
 		wp_reset_postdata();
 		?>

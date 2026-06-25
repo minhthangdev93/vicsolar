@@ -13,6 +13,7 @@ require_once get_stylesheet_directory() . '/inc/landing-solar-article.php';
 require_once get_stylesheet_directory() . '/inc/landing-solar-article-acf-fields.php';
 require_once get_stylesheet_directory() . '/inc/landing-solar-acf-extra-fields.php';
 require_once get_stylesheet_directory() . '/inc/landing-solar.php';
+require_once get_stylesheet_directory() . '/inc/landing-solar-performance.php';
 require_once get_stylesheet_directory() . '/inc/landing-solar-acf.php';
 
 /**

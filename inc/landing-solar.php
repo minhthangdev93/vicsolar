@@ -66,7 +66,7 @@ function electro_child_landing_solar_assets() {
 
 	wp_enqueue_style(
 		'electro-child-landing-montserrat',
-		'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap',
+		'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap',
 		array(),
 		null
 	);
@@ -253,7 +253,7 @@ function electro_child_landing_category_posts_query( $category_slug, $per_page =
  */
 function electro_child_landing_factory_posts_query() {
 	$slug     = apply_filters( 'electro_child_landing_factory_category_slug', 'tin-tuc' );
-	$per_page = (int) apply_filters( 'electro_child_landing_factory_posts_per_page', -1 );
+	$per_page = (int) apply_filters( 'electro_child_landing_factory_posts_per_page', 12 );
 
 	return electro_child_landing_category_posts_query( $slug, $per_page );
 }
@@ -265,7 +265,7 @@ function electro_child_landing_factory_posts_query() {
  */
 function electro_child_landing_projects_posts_query() {
 	$slug     = apply_filters( 'electro_child_landing_projects_category_slug', 'du-an-da-lam' );
-	$per_page = (int) apply_filters( 'electro_child_landing_projects_posts_per_page', -1 );
+	$per_page = (int) apply_filters( 'electro_child_landing_projects_posts_per_page', 12 );
 
 	return electro_child_landing_category_posts_query( $slug, $per_page );
 }

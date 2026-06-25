@@ -27,6 +27,7 @@ $s09_card_link_label     = electro_child_landing_get( 's09_card_link_label' );
 	<div class="section-bg fill">
 		<?php if ( $s09_bg_url ) : ?>
 			<img
+				loading="lazy"
 				decoding="async"
 				width="1536"
 				height="1024"

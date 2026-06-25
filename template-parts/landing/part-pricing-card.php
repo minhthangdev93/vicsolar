@@ -57,7 +57,7 @@ $col_id        = 'col-price-' . $index;
 			<div class="icon-box-img vs-price-product-img">
 				<div class="icon">
 					<div class="icon-inner">
-						<img decoding="async" width="300" height="300" src="<?php echo esc_url( $img_url ); ?>" class="attachment-medium size-medium" alt="<?php echo esc_attr( $power ); ?>">
+						<img decoding="async" loading="lazy" width="300" height="300" src="<?php echo esc_url( $img_url ); ?>" class="attachment-medium size-medium" alt="<?php echo esc_attr( $power ); ?>">
 					</div>
 				</div>
 			</div>

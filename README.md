@@ -42,7 +42,12 @@ _tools/                 # Script dev (extract defaults), không dùng runtime
 4. File `.cpanel.yml` copy code sang `public_html/wp-content/themes/electro-child/`
 5. Vào **Landing Solar** → **Lưu nội dung** (lần đầu) → xóa cache → Ctrl+F5
 
-## Ghi chú
+## Hiệu năng (PageSpeed / Core Web Vitals)
+
+- `inc/landing-solar-performance.php` — preload LCP, preconnect font, defer CSS/JS không critical
+- Slider section 09: tối đa **12 bài** mỗi khối (filter `electro_child_landing_factory_posts_per_page`)
+- Trên production: bật cache (WP Rocket / LiteSpeed), WebP ảnh, CDN nếu có
+
 
 - Section 02, 03, 11 có file partial nhưng **chưa** nằm trong danh sách render (`inc/landing-solar.php`)
 - Ảnh upload qua ACF cần có trong `wp-content/uploads/` trên server
