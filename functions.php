@@ -15,6 +15,7 @@ require_once get_stylesheet_directory() . '/inc/landing-solar-acf-extra-fields.p
 require_once get_stylesheet_directory() . '/inc/landing-solar.php';
 require_once get_stylesheet_directory() . '/inc/landing-solar-performance.php';
 require_once get_stylesheet_directory() . '/inc/landing-solar-acf.php';
+require_once get_stylesheet_directory() . '/inc/woocommerce-comment-spam.php';
 
 /**
  * Footer payment icons: skip invalid/missing attachment IDs (avoids PHP warnings).
