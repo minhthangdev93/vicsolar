@@ -309,9 +309,35 @@ function electro_child_landing_acf_extra_fields() {
 			),
 			array(
 				'key'   => 'field_s09_factory_aria_label',
-				'label' => 'Slider tin tức — aria label',
+				'label' => 'Slider video — aria label',
 				'name'  => 's09_factory_aria_label',
 				'type'  => 'text',
+			),
+			array(
+				'key'          => 'field_s09_videos',
+				'label'        => 'Video YouTube (khối nhà xưởng)',
+				'name'         => 's09_videos',
+				'type'         => 'repeater',
+				'layout'       => 'block',
+				'button_label' => 'Thêm video',
+				'min'          => 0,
+				'max'          => 20,
+				'instructions' => 'Dán link YouTube. Hơn 4 video sẽ tự trượt ngang trên desktop. Mobile hiển thị 1 video, trượt ngang.',
+				'sub_fields'   => array(
+					array(
+						'key'          => 'field_s09_video_url',
+						'label'        => 'Link YouTube',
+						'name'         => 's09_video_url',
+						'type'         => 'text',
+						'instructions' => 'VD: https://www.youtube.com/watch?v=oqhsFoxivEU',
+					),
+					array(
+						'key'   => 'field_s09_video_title',
+						'label' => 'Tiêu đề (tuỳ chọn)',
+						'name'  => 's09_video_title',
+						'type'  => 'text',
+					),
+				),
 			),
 			array(
 				'key'   => 'field_s09_projects_title',

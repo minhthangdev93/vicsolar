@@ -720,12 +720,26 @@ body.page-template-template-landing-solar #primary.content-area {
 	color: #111;
 }
 
+#section_623584978 .vs-legal-actions-wrap {
+	margin: 16px 0 0;
+	padding: 0;
+}
+
+#section_623584978 .vs-legal-actions-title {
+	margin: 0 0 10px;
+	font-size: clamp(16px, 1.6vw, 20px);
+	font-weight: 900;
+	line-height: 1.25;
+	color: #f05a12;
+	letter-spacing: 0.02em;
+}
+
 #section_623584978 .vs-legal-actions {
 	display: flex;
 	gap: 10px;
 	flex-wrap: wrap;
 	align-items: center;
-	margin: 16px 0 0;
+	margin: 0;
 	padding: 0;
 }
 
@@ -742,14 +756,14 @@ body.page-template-template-landing-solar #primary.content-area {
 	white-space: nowrap;
 }
 
-#section_623584978 .vs-legal-btn--primary {
-	background: linear-gradient(90deg, #ff8a3d, #ee5e09);
-	box-shadow: 0 12px 30px rgba(238, 94, 9, 0.24);
+#section_623584978 .vs-legal-btn--zalo {
+	background: linear-gradient(90deg, #0068ff 0%, #0084ff 55%, #33a0ff 100%);
+	box-shadow: 0 12px 30px rgba(0, 104, 255, 0.22);
 }
 
-#section_623584978 .vs-legal-btn--danger {
-	background: linear-gradient(90deg, #dc3545, #a71d2a);
-	box-shadow: 0 12px 30px rgba(220, 53, 69, 0.24);
+#section_623584978 .vs-legal-btn--call {
+	background: linear-gradient(90deg, #0b2e51 0%, #0e497c 55%, #1c6fb0 100%);
+	box-shadow: 0 12px 30px rgba(11, 46, 81, 0.22);
 }
 
 #section_623584978 .vs-legal-video {
@@ -2255,6 +2269,33 @@ body.page-template-template-landing-solar #primary.content-area {
 
 #section_272174093 .vs-factory-card-link:hover {
 	color: #c2410c;
+}
+
+#section_272174093 .vs-video-card {
+	flex: 0 0 calc((100% - 18px) / 2);
+	min-width: calc((100% - 18px) / 2);
+	max-width: calc((100% - 18px) / 2);
+}
+
+#section_272174093 .vs-video-card-media {
+	aspect-ratio: 16 / 9;
+	background: #000;
+}
+
+#section_272174093 .vs-video-card-media iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	display: block;
+}
+
+#section_272174093 .vs-video-card-body {
+	padding: 12px 14px;
+}
+
+#section_272174093 .vs-video-card-title {
+	margin: 0;
+	min-height: 0;
 }
 
 @media (max-width: 849px) {

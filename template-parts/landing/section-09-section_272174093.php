@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$factory_query  = electro_child_landing_factory_posts_query();
+$factory_videos = electro_child_landing_get_factory_videos();
 $projects_query = electro_child_landing_projects_posts_query();
 $s09_bg_url     = electro_child_landing_image_url( 's09_bg_image' );
 
@@ -68,17 +68,16 @@ $s09_card_link_label     = electro_child_landing_get( 's09_card_link_label' );
 			</div>
 		</header>
 
-		<div class="row row-full-width vs-factory-wrap vs-factory-wrap--news" id="row-factory-tin-tuc">
+		<div class="row row-full-width vs-factory-wrap vs-factory-wrap--news vs-factory-wrap--videos" id="row-factory-tin-tuc">
 			<div class="col small-12 large-12">
 				<div class="col-inner">
 					<?php
 					get_template_part(
 						'template-parts/landing/part',
-						'factory-post-cards',
+						'video-cards',
 						array(
-							'factory_cards_query'      => $factory_query,
-							'factory_cards_aria_label' => $s09_factory_aria_label,
-							'factory_card_link_label'  => $s09_card_link_label,
+							'videos'     => $factory_videos,
+							'aria_label' => $s09_factory_aria_label,
 						)
 					);
 					?>

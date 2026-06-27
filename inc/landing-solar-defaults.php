@@ -24,10 +24,11 @@ return array(
 	's01_legal_desc'     => 'Việc lắp đặt điện mặt trời cần tuân thủ Nghị định số 58/2025/NĐ-CP của Chính phủ. Cụ thể:',
 	's01_legal_bullet_1' => 'Hộ gia đình <span style="color: #ff6a00; font-weight: 950;">&lt; 100 kW</span> (tự dùng): Phải thông báo đầy đủ đến cơ sở ban ngành theo đúng quy định. Sản phẩm phải có đầy đủ chứng từ <strong><span style="color: #ff6600;">CO,CQ,VAT</span>. <span style="color: #ff6600;"><span style="color: #000000;">Xử phạt hành chính</span> từ nhắc nhở đến 100tr đồng nếu vi phạm <span style="color: #000000;">một số điều trong Nghị Định 133/2026/NĐ-CP</span></span></strong>',
 	's01_legal_bullet_2' => 'Công suất <span style="color: #ff6a00; font-weight: 950;">≥ 100 kW</span> hoặc có bán điện dư: tùy trường hợp phải đăng ký và/hoặc xin phép theo quy định.',
-	's01_btn_58_label'   => 'Đọc Nghị định 58/2025/NĐ-CP',
-	's01_btn_58_url'     => '#',
-	's01_btn_133_label'  => 'Đọc Nghị định 133/2026/NĐ-CP',
-	's01_btn_133_url'    => '#',
+	's01_legal_actions_title' => 'Liên hệ báo giá ngay',
+	's01_zalo_label'     => 'Chat Zalo',
+	's01_zalo_url'       => 'https://zalo.me/0966856555',
+	's01_call_label'     => 'Gọi ngay',
+	's01_call_phone'     => '0966856555',
 
 	// Section 01 — video.
 	's01_video_label'    => 'Videos',

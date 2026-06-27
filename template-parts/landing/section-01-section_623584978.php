@@ -95,28 +95,37 @@ $s01_vid_title = electro_child_landing_get( 's01_video_title' );
 													<?php endif; ?>
 												</ul>
 
-												<div class="vs-legal-actions">
+												<div class="vs-legal-actions-wrap">
 													<?php
-													$btn_58_label = electro_child_landing_get( 's01_btn_58_label' );
-													$btn_58_url   = electro_child_landing_get( 's01_btn_58_url' );
-													if ( $btn_58_label && $btn_58_url ) :
+													$legal_actions_title = electro_child_landing_get( 's01_legal_actions_title' );
+													if ( $legal_actions_title ) :
 														?>
-														<a class="vs-legal-btn vs-legal-btn--primary" href="<?php echo esc_attr( electro_child_landing_esc_href( $btn_58_url ) ); ?>" target="_blank" rel="noopener noreferrer">
-															<span aria-hidden="true">📄</span>
-															<span><?php echo esc_html( $btn_58_label ); ?></span>
+														<div class="vs-legal-actions-title"><?php echo esc_html( $legal_actions_title ); ?></div>
+													<?php endif; ?>
+
+													<div class="vs-legal-actions">
+													<?php
+													$zalo_label = electro_child_landing_get( 's01_zalo_label' );
+													$zalo_url   = electro_child_landing_get( 's01_zalo_url' );
+													if ( $zalo_label && $zalo_url ) :
+														?>
+														<a class="vs-legal-btn vs-legal-btn--zalo" href="<?php echo esc_attr( electro_child_landing_esc_href( $zalo_url ) ); ?>" target="_blank" rel="noopener noreferrer">
+															<span aria-hidden="true">💬</span>
+															<span><?php echo esc_html( $zalo_label ); ?></span>
 														</a>
 													<?php endif; ?>
 
 													<?php
-													$btn_133_label = electro_child_landing_get( 's01_btn_133_label' );
-													$btn_133_url   = electro_child_landing_get( 's01_btn_133_url' );
-													if ( $btn_133_label && $btn_133_url ) :
+													$call_label = electro_child_landing_get( 's01_call_label' );
+													$call_phone = preg_replace( '/\s+/', '', (string) electro_child_landing_get( 's01_call_phone' ) );
+													if ( $call_label && $call_phone ) :
 														?>
-														<a class="vs-legal-btn vs-legal-btn--danger" href="<?php echo esc_attr( electro_child_landing_esc_href( $btn_133_url ) ); ?>" target="_blank" rel="noopener noreferrer">
-															<span aria-hidden="true">⚖️</span>
-															<span><?php echo esc_html( $btn_133_label ); ?></span>
+														<a class="vs-legal-btn vs-legal-btn--call" href="<?php echo esc_attr( 'tel:' . $call_phone ); ?>">
+															<span aria-hidden="true">📞</span>
+															<span><?php echo esc_html( $call_label ); ?></span>
 														</a>
 													<?php endif; ?>
+													</div>
 												</div>
 											</div>
 

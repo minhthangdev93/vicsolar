@@ -25,6 +25,12 @@ electro_get_header();
 					<?php
 					foreach ( electro_child_landing_solar_sections() as $section_slug ) {
 						get_template_part( 'template-parts/landing/' . $section_slug );
+
+						// Bỏ 2 nút Gọi ngay / Nhắn Zalo ngay sau section 01.
+						if ( 'section-01-section_623584978' === $section_slug ) {
+							continue;
+						}
+
 						get_template_part( 'template-parts/landing/part', 'section-contact-cta' );
 					}
 					?>

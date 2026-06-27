@@ -250,6 +250,19 @@ function electro_child_landing_seed_repeaters() {
 		);
 	}
 
+	$video_rows = electro_child_landing_read_videos_from_options();
+	if ( ! is_array( $video_rows ) || electro_child_landing_video_repeater_is_hollow( $video_rows ) ) {
+		$video_rows = electro_child_landing_get_field_raw( 's09_videos' );
+	}
+
+	if ( electro_child_landing_video_repeater_is_hollow( $video_rows ) ) {
+		update_field(
+			's09_videos',
+			electro_child_landing_video_defaults(),
+			electro_child_landing_option_id()
+		);
+	}
+
 	$brand_rows = electro_child_landing_read_brand_cards_from_options();
 	if ( ! is_array( $brand_rows ) || electro_child_landing_brand_repeater_is_hollow( $brand_rows ) ) {
 		$brand_rows = electro_child_landing_get_field_raw( 's10_brand_cards' );
@@ -334,6 +347,14 @@ function electro_child_landing_acf_load_default( $value, $post_id, $field ) {
 	}
 
 	if ( 'repeater' === $field['type'] ) {
+		if ( 's09_videos' === $field['name'] ) {
+			$rows = is_array( $value ) ? $value : array();
+			if ( electro_child_landing_video_repeater_is_hollow( $rows ) ) {
+				return electro_child_landing_video_defaults_for_admin();
+			}
+			return $value;
+		}
+
 		if ( 's10_brand_cards' === $field['name'] ) {
 			return electro_child_landing_brand_cards_for_acf_admin( is_array( $value ) ? $value : array() );
 		}
@@ -799,30 +820,37 @@ function electro_child_landing_acf_fields() {
 			'media_upload' => 0,
 		),
 		array(
-			'key'   => 'field_s01_btn_58_label',
-			'label' => 'Nút NĐ 58 — nhãn',
-			'name'  => 's01_btn_58_label',
+			'key'          => 'field_s01_legal_actions_title',
+			'label'        => 'Tiêu đề trên nút liên hệ',
+			'name'         => 's01_legal_actions_title',
+			'type'         => 'text',
+			'instructions' => 'VD: Liên hệ báo giá ngay. Hiển thị phía trên nút Chat Zalo / Gọi ngay.',
+		),
+		array(
+			'key'   => 'field_s01_zalo_label',
+			'label' => 'Nút Zalo — nhãn',
+			'name'  => 's01_zalo_label',
 			'type'  => 'text',
 		),
 		array(
-			'key'          => 'field_s01_btn_58_url',
-			'label'        => 'Nút NĐ 58 — link',
-			'name'         => 's01_btn_58_url',
+			'key'          => 'field_s01_zalo_url',
+			'label'        => 'Nút Zalo — link',
+			'name'         => 's01_zalo_url',
 			'type'         => 'text',
-			'instructions' => 'URL đầy đủ hoặc # nếu chưa có link.',
+			'instructions' => 'VD: https://zalo.me/0966856555',
 		),
 		array(
-			'key'   => 'field_s01_btn_133_label',
-			'label' => 'Nút NĐ 133 — nhãn',
-			'name'  => 's01_btn_133_label',
+			'key'   => 'field_s01_call_label',
+			'label' => 'Nút gọi — nhãn',
+			'name'  => 's01_call_label',
 			'type'  => 'text',
 		),
 		array(
-			'key'          => 'field_s01_btn_133_url',
-			'label'        => 'Nút NĐ 133 — link',
-			'name'         => 's01_btn_133_url',
+			'key'          => 'field_s01_call_phone',
+			'label'        => 'Nút gọi — số điện thoại',
+			'name'         => 's01_call_phone',
 			'type'         => 'text',
-			'instructions' => 'URL đầy đủ hoặc # nếu chưa có link.',
+			'instructions' => 'Chỉ nhập số, VD: 0966856555',
 		),
 		array(
 			'key'   => 'field_s01_video_label',

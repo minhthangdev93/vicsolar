@@ -107,7 +107,9 @@ function electro_child_landing_price_card_acf_name( $prefix, $key ) {
 function electro_child_landing_price_card_field_keys( $prefix ) {
 	$map = array();
 	foreach ( electro_child_landing_price_card_keys() as $key ) {
-		$map[ $key ] = 'field_' . $prefix . '_card_' . $key;
+		// Image subfield key is field_{prefix}_card_image (no duplicated "card").
+		$suffix      = 'card_image' === $key ? 'image' : $key;
+		$map[ $key ] = 'field_' . $prefix . '_card_' . $suffix;
 	}
 	return $map;
 }
@@ -734,4 +736,169 @@ function electro_child_landing_image_url_from_value( $value ) {
 	}
 
 	return '';
+}
+
+/**
+ * Default YouTube videos for the section 09 factory block.
+ *
+ * @return array<int, array<string, string>>
+ */
+function electro_child_landing_video_defaults() {
+	return array(
+		array(
+			's09_video_url'   => 'https://www.youtube.com/watch?v=oqhsFoxivEU',
+			's09_video_title' => '',
+		),
+	);
+}
+
+/**
+ * Subfield names for a section 09 video row.
+ *
+ * @return string[]
+ */
+function electro_child_landing_video_keys() {
+	return array( 's09_video_url', 's09_video_title' );
+}
+
+/**
+ * @param mixed $row Video repeater row.
+ * @return bool
+ */
+function electro_child_landing_video_row_is_empty( $row ) {
+	if ( ! is_array( $row ) ) {
+		return true;
+	}
+
+	foreach ( array( 'field_s09_video_url', 's09_video_url', 'url' ) as $key ) {
+		if ( isset( $row[ $key ] ) && '' !== trim( (string) $row[ $key ] ) ) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+/**
+ * @param mixed $rows Video repeater rows.
+ * @return bool
+ */
+function electro_child_landing_video_repeater_is_hollow( $rows ) {
+	if ( ! is_array( $rows ) || empty( $rows ) ) {
+		return true;
+	}
+
+	foreach ( $rows as $row ) {
+		if ( ! electro_child_landing_video_row_is_empty( $row ) ) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+/**
+ * Read video repeater rows directly from wp_options (bypasses ACF assembly).
+ *
+ * @return array<int, array<string, mixed>>|null
+ */
+function electro_child_landing_read_videos_from_options() {
+	$repeater = 's09_videos';
+	$best     = null;
+
+	foreach ( electro_child_landing_option_prefixes() as $opt_prefix ) {
+		$count = get_option( $opt_prefix . $repeater, false );
+		if ( false === $count || '' === $count || (int) $count <= 0 ) {
+			continue;
+		}
+
+		$row_count = (int) $count;
+		$rows      = array();
+
+		for ( $i = 0; $i < $row_count; $i++ ) {
+			$row = array();
+			foreach ( electro_child_landing_video_keys() as $key ) {
+				$value = get_option( $opt_prefix . $repeater . '_' . $i . '_' . $key, null );
+				if ( null !== $value && false !== $value && '' !== trim( (string) $value ) ) {
+					$row[ $key ] = $value;
+				}
+			}
+			$rows[] = $row;
+		}
+
+		if ( ! electro_child_landing_video_repeater_is_hollow( $rows ) ) {
+			return $rows;
+		}
+
+		$best = $rows;
+	}
+
+	return $best;
+}
+
+/**
+ * Default video rows keyed by ACF field keys (admin repeater placeholder).
+ *
+ * @return array<int, array<string, string>>
+ */
+function electro_child_landing_video_defaults_for_admin() {
+	$rows = array();
+	foreach ( electro_child_landing_video_defaults() as $row ) {
+		$rows[] = array(
+			'field_s09_video_url'   => isset( $row['s09_video_url'] ) ? $row['s09_video_url'] : '',
+			'field_s09_video_title' => isset( $row['s09_video_title'] ) ? $row['s09_video_title'] : '',
+		);
+	}
+	return $rows;
+}
+
+/**
+ * Normalized YouTube videos (embed URL + title) for the section 09 factory block.
+ *
+ * @return array<int, array{embed: string, title: string}>
+ */
+function electro_child_landing_get_factory_videos() {
+	$rows = electro_child_landing_read_videos_from_options();
+	if ( ! is_array( $rows ) || electro_child_landing_video_repeater_is_hollow( $rows ) ) {
+		$rows = electro_child_landing_get_field_raw( 's09_videos' );
+	}
+
+	if ( electro_child_landing_video_repeater_is_hollow( $rows ) ) {
+		$rows = electro_child_landing_video_defaults();
+	}
+
+	$videos = array();
+	foreach ( (array) $rows as $row ) {
+		if ( ! is_array( $row ) ) {
+			continue;
+		}
+
+		$url = '';
+		foreach ( array( 's09_video_url', 'url' ) as $key ) {
+			if ( ! empty( $row[ $key ] ) ) {
+				$url = (string) $row[ $key ];
+				break;
+			}
+		}
+
+		$embed = electro_child_landing_youtube_embed_url( trim( $url ) );
+		if ( '' === $embed ) {
+			continue;
+		}
+
+		$title = '';
+		foreach ( array( 's09_video_title', 'title' ) as $key ) {
+			if ( ! empty( $row[ $key ] ) ) {
+				$title = (string) $row[ $key ];
+				break;
+			}
+		}
+
+		$videos[] = array(
+			'embed' => $embed,
+			'title' => trim( $title ),
+		);
+	}
+
+	return $videos;
 }
