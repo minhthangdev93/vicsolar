@@ -36,7 +36,7 @@ $s01_vid_title = electro_child_landing_get( 's01_video_title' );
 				<div class="col-inner">
 					<div id="text-483275844" class="text vs-hero-head">
 						<div class="vs-hero-head__inner">
-							<h1 class="vs-hero-title"><?php echo esc_html( $s01_title ); ?></h1>
+							<h1 class="vs-hero-title"><?php echo electro_child_landing_kses_content( $s01_title ); ?></h1>
 							<div class="vs-hero-title-rule" aria-hidden="true">
 								<span class="vs-hero-title-rule__line vs-hero-title-rule__line--wide"></span>
 							</div>
@@ -44,11 +44,11 @@ $s01_vid_title = electro_child_landing_get( 's01_video_title' );
 					</div>
 
 					<?php if ( $s01_intro_1 ) : ?>
-						<p class="vs-hero-intro"><?php echo esc_html( $s01_intro_1 ); ?></p>
+						<div class="vs-hero-intro"><?php echo electro_child_landing_kses_content( $s01_intro_1 ); ?></div>
 					<?php endif; ?>
 
 					<?php if ( $s01_intro_2 ) : ?>
-						<p class="vs-hero-intro"><?php echo esc_html( $s01_intro_2 ); ?></p>
+						<div class="vs-hero-intro"><?php echo electro_child_landing_kses_content( $s01_intro_2 ); ?></div>
 					<?php endif; ?>
 
 					<div class="row" id="row-1630317366">
@@ -64,35 +64,25 @@ $s01_vid_title = electro_child_landing_get( 's01_video_title' );
 												$legal_badge = electro_child_landing_get( 's01_legal_badge' );
 												if ( $legal_badge ) :
 													?>
-													<div class="vs-legal-badge"><?php echo esc_html( $legal_badge ); ?></div>
+													<div class="vs-legal-badge"><?php echo electro_child_landing_kses_content( $legal_badge ); ?></div>
 												<?php endif; ?>
 
-												<h3 class="vs-legal-heading"><?php echo esc_html( electro_child_landing_get( 's01_legal_title' ) ); ?></h3>
+												<h3 class="vs-legal-heading"><?php echo electro_child_landing_kses_content( electro_child_landing_get( 's01_legal_title' ) ); ?></h3>
 
 												<?php
 												$legal_desc = electro_child_landing_get( 's01_legal_desc' );
 												if ( $legal_desc ) :
 													?>
-													<div class="vs-legal-desc"><?php echo esc_html( $legal_desc ); ?></div>
+													<div class="vs-legal-desc"><?php echo electro_child_landing_kses_content( $legal_desc ); ?></div>
 												<?php endif; ?>
 
 												<ul class="vs-legal-bullets">
 													<?php
 													$bullet_1 = electro_child_landing_get( 's01_legal_bullet_1' );
 													$bullet_2 = electro_child_landing_get( 's01_legal_bullet_2' );
-													if ( $bullet_1 ) :
-														?>
-														<li class="vs-legal-bullets__item">
-															<span class="vs-legal-bullets__dot" aria-hidden="true"></span>
-															<div class="vs-legal-bullets__text"><?php echo electro_child_landing_kses_rich( $bullet_1 ); ?></div>
-														</li>
-													<?php endif; ?>
-													<?php if ( $bullet_2 ) : ?>
-														<li class="vs-legal-bullets__item">
-															<span class="vs-legal-bullets__dot" aria-hidden="true"></span>
-															<div class="vs-legal-bullets__text"><?php echo electro_child_landing_kses_rich( $bullet_2 ); ?></div>
-														</li>
-													<?php endif; ?>
+													echo electro_child_landing_legal_bullet_items( $bullet_1 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+													echo electro_child_landing_legal_bullet_items( $bullet_2 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+													?>
 												</ul>
 
 												<div class="vs-legal-actions-wrap">
@@ -100,7 +90,7 @@ $s01_vid_title = electro_child_landing_get( 's01_video_title' );
 													$legal_actions_title = electro_child_landing_get( 's01_legal_actions_title' );
 													if ( $legal_actions_title ) :
 														?>
-														<div class="vs-legal-actions-title"><?php echo esc_html( $legal_actions_title ); ?></div>
+														<div class="vs-legal-actions-title"><?php echo electro_child_landing_kses_content( $legal_actions_title ); ?></div>
 													<?php endif; ?>
 
 													<div class="vs-legal-actions">
@@ -111,7 +101,7 @@ $s01_vid_title = electro_child_landing_get( 's01_video_title' );
 														?>
 														<a class="vs-legal-btn vs-legal-btn--zalo" href="<?php echo esc_attr( electro_child_landing_esc_href( $zalo_url ) ); ?>" target="_blank" rel="noopener noreferrer">
 															<span aria-hidden="true">💬</span>
-															<span><?php echo esc_html( $zalo_label ); ?></span>
+															<span><?php echo electro_child_landing_kses_content( $zalo_label ); ?></span>
 														</a>
 													<?php endif; ?>
 
@@ -122,7 +112,7 @@ $s01_vid_title = electro_child_landing_get( 's01_video_title' );
 														?>
 														<a class="vs-legal-btn vs-legal-btn--call" href="<?php echo esc_attr( 'tel:' . $call_phone ); ?>">
 															<span aria-hidden="true">📞</span>
-															<span><?php echo esc_html( $call_label ); ?></span>
+															<span><?php echo electro_child_landing_kses_content( $call_label ); ?></span>
 														</a>
 													<?php endif; ?>
 													</div>
@@ -132,8 +122,8 @@ $s01_vid_title = electro_child_landing_get( 's01_video_title' );
 											<?php if ( $s01_youtube ) : ?>
 												<div id="video-nghi-dinh-58" class="vs-legal-video">
 													<div class="vs-legal-video__header">
-														<div class="vs-legal-video__label"><?php echo esc_html( electro_child_landing_get( 's01_video_label' ) ); ?></div>
-														<div class="vs-legal-video__badge"><?php echo esc_html( electro_child_landing_get( 's01_video_badge' ) ); ?></div>
+														<div class="vs-legal-video__label"><?php echo electro_child_landing_kses_content( electro_child_landing_get( 's01_video_label' ) ); ?></div>
+														<div class="vs-legal-video__badge"><?php echo electro_child_landing_kses_content( electro_child_landing_get( 's01_video_badge' ) ); ?></div>
 													</div>
 													<div class="vs-legal-video__frame">
 														<div class="vs-legal-video__ratio">
@@ -155,7 +145,7 @@ $s01_vid_title = electro_child_landing_get( 's01_video_title' );
 											?>
 											<div class="vs-legal-note">
 												<div class="vs-legal-note__icon" aria-hidden="true"><span>i</span></div>
-												<div class="vs-legal-note__text"><?php echo esc_html( $legal_note ); ?></div>
+												<div class="vs-legal-note__text"><?php echo electro_child_landing_kses_content( $legal_note ); ?></div>
 											</div>
 										<?php endif; ?>
 									</div>

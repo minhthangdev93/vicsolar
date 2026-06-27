@@ -81,7 +81,7 @@ $col_id    = 'col-brand-' . $index;
 						<?php if ( $btn_label ) : ?>
 							<div class="vs-brand-card-cta">
 								<a style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 13px 14px; border-radius: 14px; text-decoration: none; font-weight: 950; color: #fff; background: radial-gradient(120% 160% at 15% 10%, rgba(255,255,255,.28) 0%, rgba(255,255,255,0) 55%), linear-gradient(90deg,#F05A12 0%, #FF8A2C 55%, #FFB15A 100%); box-shadow: 0 14px 34px rgba(240,90,18,.22); box-sizing: border-box;" href="<?php echo esc_url( $btn_url ); ?>">
-									<span style="font-size: 75%;"><?php echo esc_html( $btn_label ); ?></span>
+									<span style="font-size: 75%;"><?php echo electro_child_landing_kses_content( $btn_label ); ?></span>
 								</a>
 							</div>
 						<?php endif; ?>

@@ -533,24 +533,74 @@ function electro_child_landing_image_url( $key, $default_url = '' ) {
  * @return string
  */
 function electro_child_landing_kses_rich( $html ) {
-	return wp_kses(
-		(string) $html,
-		array(
-			'span'   => array(
-				'style' => true,
-				'class' => true,
-			),
-			'strong' => array(),
-			'b'      => array(),
-			'em'     => array(),
-			'a'      => array(
-				'href'   => true,
-				'target' => true,
-				'rel'    => true,
-			),
-			'br'     => array(),
-		)
-	);
+	return electro_child_landing_kses_content( $html );
+}
+
+/**
+ * Normalize common HTML typos before sanitizing (e.g. "< / br>" from plain textarea).
+ *
+ * @param string $html Raw HTML.
+ * @return string
+ */
+function electro_child_landing_normalize_content_html( $html ) {
+	$html = (string) $html;
+	$html = preg_replace( '/<\s*\/\s*br\s*>/i', '<br>', $html );
+	$html = preg_replace( '/<\s*br\s*\/?\s*>/i', '<br>', $html );
+
+	return $html;
+}
+
+/**
+ * Sanitize landing copy that may contain HTML from admin (text, textarea, wysiwyg).
+ *
+ * @param string $html Raw HTML.
+ * @return string
+ */
+function electro_child_landing_kses_content( $html ) {
+	return wp_kses_post( electro_child_landing_normalize_content_html( $html ) );
+}
+
+/**
+ * Sanitize WYSIWYG content read raw (format_value off): convert line breaks to <p>/<br>.
+ *
+ * @param string $html Raw WYSIWYG value.
+ * @return string
+ */
+function electro_child_landing_kses_wysiwyg( $html ) {
+	return wp_kses_post( wpautop( electro_child_landing_normalize_content_html( $html ) ) );
+}
+
+/**
+ * Convert a WYSIWYG/textarea bullet value into <li> rows — one orange dot per line.
+ *
+ * @param string $html Raw field value.
+ * @return string HTML list items.
+ */
+function electro_child_landing_legal_bullet_items( $html ) {
+	$html = electro_child_landing_normalize_content_html( (string) $html );
+
+	// Treat paragraph/line breaks as line separators.
+	$html = preg_replace( '#</p\s*>#i', "\n", $html );
+	$html = preg_replace( '#<p\b[^>]*>#i', '', $html );
+	$html = preg_replace( '#<br\s*/?>#i', "\n", $html );
+
+	$lines = preg_split( '/\r\n|\r|\n/', $html );
+	$items = '';
+
+	foreach ( (array) $lines as $line ) {
+		$line  = trim( $line );
+		$plain = trim( str_replace( "\xc2\xa0", ' ', wp_strip_all_tags( $line ) ) );
+		if ( '' === $plain ) {
+			continue;
+		}
+
+		$items .= '<li class="vs-legal-bullets__item">'
+			. '<span class="vs-legal-bullets__dot" aria-hidden="true"></span>'
+			. '<div class="vs-legal-bullets__text">' . electro_child_landing_kses_content( $line ) . '</div>'
+			. '</li>';
+	}
+
+	return $items;
 }
 
 /**
@@ -738,6 +788,11 @@ function electro_child_landing_acf_with_default( $field ) {
 			$field['default_value'] = $default;
 		}
 	}
+
+	if ( ! empty( $field['type'] ) && in_array( $field['type'], array( 'text', 'textarea' ), true ) && empty( $field['instructions'] ) ) {
+		$field['instructions'] = 'Hỗ trợ HTML (xuống dòng, in đậm, màu chữ, link).';
+	}
+
 	return $field;
 }
 

@@ -18,10 +18,10 @@ $recommend = electro_child_landing_article_get( 's10_article_choose_recommend' )
 <section id="h2-choose" class="vns-a-sec">
 	<div style="margin: 2rem 0; padding: 0;">
 		<?php if ( $heading ) : ?>
-			<h2 style="font-size: 1.5rem; font-weight: bold; color: #1e293b; margin-bottom: 1rem;"><?php echo esc_html( $heading ); ?></h2>
+			<h2 style="font-size: 1.5rem; font-weight: bold; color: #1e293b; margin-bottom: 1rem;"><?php echo electro_child_landing_kses_content( $heading ); ?></h2>
 		<?php endif; ?>
 		<?php if ( $intro ) : ?>
-			<p style="color: #374151; line-height: 1.75; margin-bottom: 1rem;"><?php echo esc_html( $intro ); ?></p>
+			<p style="color: #374151; line-height: 1.75; margin-bottom: 1rem;"><?php echo electro_child_landing_kses_content( $intro ); ?></p>
 		<?php endif; ?>
 		<?php if ( ! empty( $criteria ) ) : ?>
 			<div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 12px; margin-bottom: 1.5rem;">
@@ -36,10 +36,10 @@ $recommend = electro_child_landing_article_get( 's10_article_choose_recommend' )
 					?>
 					<div style="background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; padding: 1rem 1.25rem;">
 						<?php if ( $tag ) : ?>
-							<div style="background: #9a3412; color: #fff; font-size: 11px; font-weight: bold; letter-spacing:.06em; padding: 3px 10px; border-radius: 4px; display: inline-block; margin-bottom:.5rem;"><?php echo esc_html( $tag ); ?></div>
+							<div style="background: #9a3412; color: #fff; font-size: 11px; font-weight: bold; letter-spacing:.06em; padding: 3px 10px; border-radius: 4px; display: inline-block; margin-bottom:.5rem;"><?php echo electro_child_landing_kses_content( $tag ); ?></div>
 						<?php endif; ?>
 						<?php if ( $title ) : ?>
-							<div style="font-weight: 600; color: #1e293b; margin-bottom:.375rem;"><?php echo esc_html( $title ); ?></div>
+							<div style="font-weight: 600; color: #1e293b; margin-bottom:.375rem;"><?php echo electro_child_landing_kses_content( $title ); ?></div>
 						<?php endif; ?>
 						<?php if ( $body ) : ?>
 							<div style="font-size:.875rem; color: #374151; line-height: 1.6;"><?php echo electro_child_landing_kses_rich( $body ); ?></div>
@@ -56,7 +56,7 @@ $recommend = electro_child_landing_article_get( 's10_article_choose_recommend' )
 					<div class="vns-tbl">
 						<table style="width: 100%; border-collapse: collapse; font-size:.9rem;">
 							<?php if ( $caption ) : ?>
-								<caption style="background: #fff7ed; color: #9a3412; font-size:.8rem; font-weight: 600; padding: 8px; text-align: left; border: 1px solid #fed7aa; border-bottom: none;"><?php echo esc_html( $caption ); ?></caption>
+								<caption style="background: #fff7ed; color: #9a3412; font-size:.8rem; font-weight: 600; padding: 8px; text-align: left; border: 1px solid #fed7aa; border-bottom: none;"><?php echo electro_child_landing_kses_content( $caption ); ?></caption>
 							<?php endif; ?>
 							<thead>
 								<tr>
@@ -75,8 +75,8 @@ $recommend = electro_child_landing_article_get( 's10_article_choose_recommend' )
 									$bg = 0 === $index % 2 ? '#fff' : '#fffbf5';
 									?>
 									<tr style="background: <?php echo esc_attr( $bg ); ?>;">
-										<td style="padding: 10px 14px; border: 1px solid #fed7aa; color: #374151;"><?php echo esc_html( $criterion ); ?></td>
-										<td style="padding: 10px 14px; border: 1px solid #fed7aa; color: #166534; font-weight: 600;"><?php echo esc_html( $value ); ?></td>
+										<td style="padding: 10px 14px; border: 1px solid #fed7aa; color: #374151;"><?php echo electro_child_landing_kses_content( $criterion ); ?></td>
+										<td style="padding: 10px 14px; border: 1px solid #fed7aa; color: #166534; font-weight: 600;"><?php echo electro_child_landing_kses_content( $value ); ?></td>
 									</tr>
 								<?php endforeach; ?>
 							</tbody>

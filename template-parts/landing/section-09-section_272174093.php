@@ -45,23 +45,23 @@ $s09_card_link_label     = electro_child_landing_get( 's09_card_link_label' );
 				<div class="vs-factory-header-inner">
 					<span class="vs-factory-badge">
 						<?php if ( $s09_badge_icon ) : ?>
-							<span class="vs-factory-badge-icon" aria-hidden="true"><?php echo esc_html( $s09_badge_icon ); ?></span>
+							<span class="vs-factory-badge-icon" aria-hidden="true"><?php echo electro_child_landing_kses_content( $s09_badge_icon ); ?></span>
 						<?php endif; ?>
 						<?php if ( $s09_badge_text ) : ?>
-							<span class="vs-factory-badge-text"><?php echo esc_html( $s09_badge_text ); ?></span>
+							<span class="vs-factory-badge-text"><?php echo electro_child_landing_kses_content( $s09_badge_text ); ?></span>
 						<?php endif; ?>
 					</span>
 					<?php if ( $s09_title ) : ?>
 					<h2 class="vs-factory-title">
-						<span class="vs-factory-title-line"><?php echo esc_html( $s09_title ); ?></span>
+						<span class="vs-factory-title-line"><?php echo electro_child_landing_kses_content( $s09_title ); ?></span>
 					</h2>
 					<?php endif; ?>
 					<p class="vs-factory-subtitle">
 						<?php if ( $s09_subtitle_1 ) : ?>
-						<span class="vs-factory-subtitle-line"><?php echo esc_html( $s09_subtitle_1 ); ?></span>
+						<span class="vs-factory-subtitle-line"><?php echo electro_child_landing_kses_content( $s09_subtitle_1 ); ?></span>
 						<?php endif; ?>
 						<?php if ( $s09_subtitle_2 ) : ?>
-						<span class="vs-factory-subtitle-line"><?php echo esc_html( $s09_subtitle_2 ); ?></span>
+						<span class="vs-factory-subtitle-line"><?php echo electro_child_landing_kses_content( $s09_subtitle_2 ); ?></span>
 						<?php endif; ?>
 					</p>
 				</div>
@@ -93,10 +93,10 @@ $s09_card_link_label     = electro_child_landing_get( 's09_card_link_label' );
 
 		<div class="vs-factory-projects-intro">
 			<?php if ( $s09_projects_title ) : ?>
-			<h3 class="vs-factory-projects-title"><?php echo esc_html( $s09_projects_title ); ?></h3>
+			<h3 class="vs-factory-projects-title"><?php echo electro_child_landing_kses_content( $s09_projects_title ); ?></h3>
 			<?php endif; ?>
 			<?php if ( $s09_projects_subtitle ) : ?>
-			<p class="vs-factory-projects-subtitle"><?php echo esc_html( $s09_projects_subtitle ); ?></p>
+			<p class="vs-factory-projects-subtitle"><?php echo electro_child_landing_kses_content( $s09_projects_subtitle ); ?></p>
 			<?php endif; ?>
 		</div>
 

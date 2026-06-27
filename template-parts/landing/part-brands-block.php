@@ -36,10 +36,10 @@ foreach ( $all_cards as $index => $card ) {
 		<div class="vs-brands-title-block__inner">
 			<div class="vs-brands-title-block__heading">
 				<?php if ( $title_1 ) : ?>
-					<span><?php echo esc_html( $title_1 ); ?></span><br>
+					<span><?php echo electro_child_landing_kses_content( $title_1 ); ?></span><br>
 				<?php endif; ?>
 				<?php if ( $title_2 ) : ?>
-					<span><?php echo esc_html( $title_2 ); ?></span>
+					<span><?php echo electro_child_landing_kses_content( $title_2 ); ?></span>
 				<?php endif; ?>
 			</div>
 			<div class="vs-brands-title-block__underline"></div>
@@ -49,7 +49,7 @@ foreach ( $all_cards as $index => $card ) {
 	<?php if ( $subtitle_1 ) : ?>
 		<section class="vs-brands-subtitle-block">
 			<div class="vs-brands-subtitle-block__inner">
-				<div class="vs-brands-subtitle-block__text"><?php echo esc_html( $subtitle_1 ); ?></div>
+				<div class="vs-brands-subtitle-block__text"><?php echo electro_child_landing_kses_content( $subtitle_1 ); ?></div>
 			</div>
 		</section>
 	<?php endif; ?>
@@ -74,7 +74,7 @@ foreach ( $all_cards as $index => $card ) {
 	<?php if ( $subtitle_2 ) : ?>
 		<section class="vs-brands-subtitle-block">
 			<div class="vs-brands-subtitle-block__inner">
-				<div class="vs-brands-subtitle-block__text"><?php echo esc_html( $subtitle_2 ); ?></div>
+				<div class="vs-brands-subtitle-block__text"><?php echo electro_child_landing_kses_content( $subtitle_2 ); ?></div>
 			</div>
 		</section>
 	<?php endif; ?>

@@ -47,7 +47,7 @@ $video_count = count( $videos );
 				</div>
 				<?php if ( '' !== $title ) : ?>
 					<div class="vs-factory-card-body vs-video-card-body">
-						<h3 class="vs-factory-card-title vs-video-card-title"><?php echo esc_html( $title ); ?></h3>
+						<h3 class="vs-factory-card-title vs-video-card-title"><?php echo electro_child_landing_kses_content( $title ); ?></h3>
 					</div>
 				<?php endif; ?>
 			</article>

@@ -23,14 +23,14 @@ $exp_quote = electro_child_landing_article_get( 's10_article_b6_exp_quote' );
 <section id="h2-6" class="vns-a-sec">
 	<?php if ( $heading ) : ?>
 		<h2 id="h2-6-h">
-			<?php echo esc_html( $heading ); ?>
+			<?php echo electro_child_landing_kses_content( $heading ); ?>
 			<?php if ( $badge ) : ?>
-				<span class="vns-a-badge vns-badge-bestseller"><?php echo esc_html( $badge ); ?></span>
+				<span class="vns-a-badge vns-badge-bestseller"><?php echo electro_child_landing_kses_content( $badge ); ?></span>
 			<?php endif; ?>
 		</h2>
 	<?php endif; ?>
 	<?php if ( $intro ) : ?>
-		<p><?php echo esc_html( $intro ); ?></p>
+		<p><?php echo electro_child_landing_kses_content( $intro ); ?></p>
 	<?php endif; ?>
 	<?php if ( ! empty( $cards ) ) : ?>
 		<div class="vns-cmp2">
@@ -50,14 +50,14 @@ $exp_quote = electro_child_landing_article_get( 's10_article_b6_exp_quote' );
 			<div class="vns-spec-head">
 				<div class="vns-spec-brand">
 					<?php if ( $brand ) : ?>
-						<p><span class="vns-spec-logo-tag"><?php echo esc_html( $brand ); ?></span></p>
+						<p><span class="vns-spec-logo-tag"><?php echo electro_child_landing_kses_content( $brand ); ?></span></p>
 					<?php endif; ?>
 					<?php if ( $model ) : ?>
-						<h3 class="vns-spec-model"><?php echo esc_html( $model ); ?></h3>
+						<h3 class="vns-spec-model"><?php echo electro_child_landing_kses_content( $model ); ?></h3>
 					<?php endif; ?>
 				</div>
 				<?php if ( $meta ) : ?>
-					<div class="vns-spec-meta"><?php echo esc_html( $meta ); ?></div>
+					<div class="vns-spec-meta"><?php echo electro_child_landing_kses_content( $meta ); ?></div>
 				<?php endif; ?>
 			</div>
 			<?php if ( ! empty( $spec_rows ) ) : ?>
@@ -66,13 +66,13 @@ $exp_quote = electro_child_landing_article_get( 's10_article_b6_exp_quote' );
 						<?php foreach ( $spec_rows as $row ) : ?>
 							<tr>
 								<?php if ( ! electro_child_landing_acf_value_is_empty( $row['spec_col1_label'] ?? '' ) ) : ?>
-									<th><?php echo esc_html( (string) $row['spec_col1_label'] ); ?></th>
+									<th><?php echo electro_child_landing_kses_content( (string) $row['spec_col1_label'] ); ?></th>
 								<?php endif; ?>
 								<?php if ( ! electro_child_landing_acf_value_is_empty( $row['spec_col1_value'] ?? '' ) ) : ?>
 									<td><?php echo electro_child_landing_kses_rich( (string) $row['spec_col1_value'] ); ?></td>
 								<?php endif; ?>
 								<?php if ( ! electro_child_landing_acf_value_is_empty( $row['spec_col2_label'] ?? '' ) ) : ?>
-									<th><?php echo esc_html( (string) $row['spec_col2_label'] ); ?></th>
+									<th><?php echo electro_child_landing_kses_content( (string) $row['spec_col2_label'] ); ?></th>
 								<?php endif; ?>
 								<?php if ( ! electro_child_landing_acf_value_is_empty( $row['spec_col2_value'] ?? '' ) ) : ?>
 									<td><?php echo electro_child_landing_kses_rich( (string) $row['spec_col2_value'] ); ?></td>
@@ -92,11 +92,11 @@ $exp_quote = electro_child_landing_article_get( 's10_article_b6_exp_quote' );
 			<div class="vns-experience-header">
 				<span class="vns-experience-icon">⭐</span><br>
 				<?php if ( $exp_label ) : ?>
-					<span class="vns-experience-label"><?php echo esc_html( $exp_label ); ?></span>
+					<span class="vns-experience-label"><?php echo electro_child_landing_kses_content( $exp_label ); ?></span>
 				<?php endif; ?>
 			</div>
 			<?php if ( $exp_quote ) : ?>
-				<p><?php echo esc_html( $exp_quote ); ?></p>
+				<p><?php echo electro_child_landing_kses_content( $exp_quote ); ?></p>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>

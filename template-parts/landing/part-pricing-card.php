@@ -68,32 +68,32 @@ $col_id        = 'col-price-' . $index;
 							<div class="vs-price-card-inner" style="padding: 0; margin: 0;">
 								<div class="vs-price-card-header" style="font-weight: 950; font-size: 17px; color: #111827; line-height: 1.15; margin: 0; text-align: center;">
 									<?php if ( $power ) : ?>
-										<div style="font-weight: 950; font-size: 17px; color: #111827; line-height: 1.15; margin: 0; text-align: center;"><?php echo esc_html( $power ); ?></div>
+										<div style="font-weight: 950; font-size: 17px; color: #111827; line-height: 1.15; margin: 0; text-align: center;"><?php echo electro_child_landing_kses_content( $power ); ?></div>
 									<?php endif; ?>
 									<?php if ( $list_price ) : ?>
-										<div style="margin: 2px 0 0;"><span style="color: #ed1c24;"><?php echo esc_html( $list_price ); ?></span></div>
+										<div style="margin: 2px 0 0;"><span style="color: #ed1c24;"><?php echo electro_child_landing_kses_content( $list_price ); ?></span></div>
 									<?php endif; ?>
 									<?php if ( $brand_line ) : ?>
-										<div style="font-weight: 950; font-size: 17px; color: #111827; line-height: 1.15; margin: 2px 0 0; text-align: center;"><?php echo esc_html( $brand_line ); ?></div>
+										<div style="font-weight: 950; font-size: 17px; color: #111827; line-height: 1.15; margin: 2px 0 0; text-align: center;"><?php echo electro_child_landing_kses_content( $brand_line ); ?></div>
 									<?php endif; ?>
 								</div>
 								<div class="vs-price-card-tag" style="margin: 8px 0 0; display: flex; justify-content: center;">
 									<span style="<?php echo esc_attr( $tag_style ); ?>">
-										<span style="display: inline-flex; width: 18px; height: 18px; align-items: center; justify-content: center; border-radius: 999px; background: rgba(249,115,22,.12); border: 1px solid rgba(249,115,22,.22); line-height: 1;"><?php echo esc_html( $tag_icon ); ?></span>
-										<span style="font-size: 75%; line-height: 1;"><?php echo esc_html( $tag_text ); ?></span>
+										<span style="display: inline-flex; width: 18px; height: 18px; align-items: center; justify-content: center; border-radius: 999px; background: rgba(249,115,22,.12); border: 1px solid rgba(249,115,22,.22); line-height: 1;"><?php echo electro_child_landing_kses_content( $tag_icon ); ?></span>
+										<span style="font-size: 75%; line-height: 1;"><?php echo electro_child_landing_kses_content( $tag_text ); ?></span>
 									</span>
 								</div>
 								<div class="vs-price-card-hero" style="<?php echo esc_attr( $hero_style ); ?>">
 									<div style="position: absolute; right: -60px; top: -80px; width: 180px; height: 180px; border-radius: 999px; background: radial-gradient(circle,rgba(255,255,255,.20) 0%,rgba(255,255,255,0) 62%);"></div>
 									<div style="color: rgba(255,255,255,.95); position: relative; text-align: center;">
 										<?php if ( $package_label ) : ?>
-											<div style="font-size: 12px; font-weight: 950; letter-spacing: .2px;"><span style="font-size: 75%;"><?php echo esc_html( $package_label ); ?></span></div>
+											<div style="font-size: 12px; font-weight: 950; letter-spacing: .2px;"><span style="font-size: 75%;"><?php echo electro_child_landing_kses_content( $package_label ); ?></span></div>
 										<?php endif; ?>
 										<?php if ( $package_price ) : ?>
-											<div style="font-size: 26px; font-weight: 950; line-height: 1.05; margin-top: 2px;"><span style="font-size: 75%;"><?php echo esc_html( $package_price ); ?></span></div>
+											<div style="font-size: 26px; font-weight: 950; line-height: 1.05; margin-top: 2px;"><span style="font-size: 75%;"><?php echo electro_child_landing_kses_content( $package_price ); ?></span></div>
 										<?php endif; ?>
 										<?php if ( $package_note ) : ?>
-											<div style="margin-top: 4px; font-size: 12.5px; font-weight: 800; opacity: .9;"><span style="font-size: 75%;"><?php echo esc_html( $package_note ); ?></span></div>
+											<div style="margin-top: 4px; font-size: 12.5px; font-weight: 800; opacity: .9;"><span style="font-size: 75%;"><?php echo electro_child_landing_kses_content( $package_note ); ?></span></div>
 										<?php endif; ?>
 									</div>
 								</div>
@@ -110,7 +110,7 @@ $col_id        = 'col-price-' . $index;
 								<div style="padding: 0; margin: 0;">
 									<div class="vs-price-card-cta" style="padding: 12px 0 0; margin: 0;">
 										<span style="font-size: 75%;">
-											<a style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 12px 14px; border-radius: 14px; text-decoration: none; font-weight: 950; color: #0b2e51; background: #fff; border: 1.6px solid rgba(11,46,81,.28); box-sizing: border-box;" href="<?php echo esc_url( $btn_url ); ?>"><?php echo esc_html( $btn_label ); ?></a>
+											<a style="display: flex; justify-content: center; align-items: center; width: 100%; padding: 12px 14px; border-radius: 14px; text-decoration: none; font-weight: 950; color: #0b2e51; background: #fff; border: 1.6px solid rgba(11,46,81,.28); box-sizing: border-box;" href="<?php echo esc_url( $btn_url ); ?>"><?php echo electro_child_landing_kses_content( $btn_label ); ?></a>
 										</span>
 									</div>
 								</div>

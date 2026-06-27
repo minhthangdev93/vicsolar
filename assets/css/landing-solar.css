@@ -714,10 +714,15 @@ body.page-template-template-landing-solar #primary.content-area {
 	flex: 0 0 9px;
 }
 
-#section_623584978 .vs-legal-bullets__text {
+#section_623584978 .vs-legal-bullets__text,
+#section_623584978 .vs-legal-bullets__text p {
 	font-size: 16px;
 	line-height: 1.78;
-	color: #111;
+	color: #111 !important;
+}
+
+#section_623584978 .vs-legal-bullets__text p {
+	margin: 0;
 }
 
 #section_623584978 .vs-legal-actions-wrap {

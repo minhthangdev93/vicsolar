@@ -22,7 +22,7 @@ $nav_items = electro_child_landing_article_nav_links();
 					continue;
 				}
 				?>
-				<a class="vns-nav-pill" href="<?php echo esc_url( $href ); ?>"><?php echo esc_html( $label ); ?></a>
+				<a class="vns-nav-pill" href="<?php echo esc_url( $href ); ?>"><?php echo electro_child_landing_kses_content( $label ); ?></a>
 			<?php endforeach; ?>
 		</div>
 	<?php endif; ?>

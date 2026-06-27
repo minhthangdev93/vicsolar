@@ -17,24 +17,24 @@ $callout_body  = electro_child_landing_article_get( 's10_article_b8_callout_body
 ?>
 <section id="h2-8" class="vns-a-sec">
 	<?php if ( $heading ) : ?>
-		<h2 id="h2-8-h"><?php echo esc_html( $heading ); ?></h2>
+		<h2 id="h2-8-h"><?php echo electro_child_landing_kses_content( $heading ); ?></h2>
 	<?php endif; ?>
 	<?php if ( $para_1 ) : ?>
-		<p><?php echo esc_html( $para_1 ); ?></p>
+		<p><?php echo electro_child_landing_kses_content( $para_1 ); ?></p>
 	<?php endif; ?>
 	<?php if ( $para_2 ) : ?>
-		<p><?php echo esc_html( $para_2 ); ?></p>
+		<p><?php echo electro_child_landing_kses_content( $para_2 ); ?></p>
 	<?php endif; ?>
 	<?php if ( $para_3 ) : ?>
-		<p><?php echo esc_html( $para_3 ); ?></p>
+		<p><?php echo electro_child_landing_kses_content( $para_3 ); ?></p>
 	<?php endif; ?>
 	<?php if ( $callout_title || $callout_body ) : ?>
 		<div class="vns-callout">
 			<?php if ( $callout_title ) : ?>
-				<h3><?php echo esc_html( $callout_title ); ?></h3>
+				<h3><?php echo electro_child_landing_kses_content( $callout_title ); ?></h3>
 			<?php endif; ?>
 			<?php if ( $callout_body ) : ?>
-				<p><?php echo esc_html( $callout_body ); ?></p>
+				<p><?php echo electro_child_landing_kses_content( $callout_body ); ?></p>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>

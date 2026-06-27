@@ -181,7 +181,7 @@ function electro_child_landing_acf_article_fields() {
 			'label' => 'Đoạn kết',
 			'name'  => 's10_article_b5_footer',
 			'type'  => 'textarea',
-			'rows'  => 2,
+			'rows'  => 3,
 		),
 		array(
 			'key'   => 'field_vs_tab_s10_article_b6',
@@ -273,7 +273,7 @@ function electro_child_landing_acf_article_fields() {
 			'label' => 'Kinh nghiệm — trích dẫn',
 			'name'  => 's10_article_b6_exp_quote',
 			'type'  => 'textarea',
-			'rows'  => 4,
+			'rows'  => 3,
 		),
 		array(
 			'key'   => 'field_vs_tab_s10_article_b7',
@@ -310,7 +310,7 @@ function electro_child_landing_acf_article_fields() {
 			'label' => 'Hộp trả lời ngắn (cho phép <strong>)',
 			'name'  => 's10_article_b7_answer',
 			'type'  => 'textarea',
-			'rows'  => 2,
+			'rows'  => 3,
 		),
 		array(
 			'key'   => 'field_vs_tab_s10_article_b8',
@@ -375,7 +375,7 @@ function electro_child_landing_acf_article_fields() {
 			'label' => 'Đoạn mở đầu',
 			'name'  => 's10_article_choose_intro',
 			'type'  => 'textarea',
-			'rows'  => 4,
+			'rows'  => 3,
 		),
 		array(
 			'key'          => 'field_s10_article_choose_criteria',

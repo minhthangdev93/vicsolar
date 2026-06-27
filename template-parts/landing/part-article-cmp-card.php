@@ -34,13 +34,13 @@ $pros_lines = isset( $card['pros_lines'] ) && is_array( $card['pros_lines'] ) ? 
 <div class="<?php echo esc_attr( $card_class ); ?>">
 	<div class="vns-cmp-head">
 		<?php if ( $tag ) : ?>
-			<p><span class="vns-cmp-tag<?php echo esc_attr( $tag_extra ); ?>"><?php echo esc_html( $tag ); ?></span></p>
+			<p><span class="vns-cmp-tag<?php echo esc_attr( $tag_extra ); ?>"><?php echo electro_child_landing_kses_content( $tag ); ?></span></p>
 		<?php endif; ?>
 		<?php if ( $name ) : ?>
-			<h3 class="vns-cmp-name"><?php echo esc_html( $name ); ?></h3>
+			<h3 class="vns-cmp-name"><?php echo electro_child_landing_kses_content( $name ); ?></h3>
 		<?php endif; ?>
 		<?php if ( $tagline ) : ?>
-			<p class="vns-cmp-tagline"><?php echo esc_html( $tagline ); ?></p>
+			<p class="vns-cmp-tagline"><?php echo electro_child_landing_kses_content( $tagline ); ?></p>
 		<?php endif; ?>
 	</div>
 	<?php if ( ! empty( $specs ) ) : ?>
@@ -57,7 +57,7 @@ $pros_lines = isset( $card['pros_lines'] ) && is_array( $card['pros_lines'] ) ? 
 				}
 				?>
 				<?php if ( $label ) : ?>
-					<dt><?php echo esc_html( $label ); ?></dt>
+					<dt><?php echo electro_child_landing_kses_content( $label ); ?></dt>
 				<?php endif; ?>
 				<?php if ( $value ) : ?>
 					<dd><?php echo electro_child_landing_kses_rich( $value ); ?></dd>
@@ -68,12 +68,12 @@ $pros_lines = isset( $card['pros_lines'] ) && is_array( $card['pros_lines'] ) ? 
 	<?php if ( $pros_title || ! empty( $pros_lines ) ) : ?>
 		<div class="vns-cmp-pros">
 			<?php if ( $pros_title ) : ?>
-				<p><strong class="vns-cmp-pros-title"><?php echo esc_html( $pros_title ); ?></strong></p>
+				<p><strong class="vns-cmp-pros-title"><?php echo electro_child_landing_kses_content( $pros_title ); ?></strong></p>
 			<?php endif; ?>
 			<?php if ( ! empty( $pros_lines ) ) : ?>
 				<ul>
 					<?php foreach ( $pros_lines as $line ) : ?>
-						<li><?php echo esc_html( $line ); ?></li>
+						<li><?php echo electro_child_landing_kses_content( $line ); ?></li>
 					<?php endforeach; ?>
 				</ul>
 			<?php endif; ?>

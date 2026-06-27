@@ -15,10 +15,10 @@ $answer  = electro_child_landing_article_get( 's10_article_b7_answer' );
 ?>
 <section id="h2-7" class="vns-a-sec">
 	<?php if ( $heading ) : ?>
-		<h2 id="h2-7-h"><?php echo esc_html( $heading ); ?></h2>
+		<h2 id="h2-7-h"><?php echo electro_child_landing_kses_content( $heading ); ?></h2>
 	<?php endif; ?>
 	<?php if ( $intro ) : ?>
-		<p><?php echo esc_html( $intro ); ?></p>
+		<p><?php echo electro_child_landing_kses_content( $intro ); ?></p>
 	<?php endif; ?>
 	<?php if ( ! empty( $cards ) ) : ?>
 		<div class="vns-cmp2">

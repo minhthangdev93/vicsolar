@@ -17,10 +17,10 @@ $tel_href        = $cta_phone ? 'tel:' . $cta_phone : '';
 <div class="vs-section-contact-cta">
 	<div class="vs-section-contact-cta__inner">
 		<?php if ( $tel_href && $cta_phone_label ) : ?>
-			<a class="vs-section-contact-btn vs-section-contact-call" href="<?php echo esc_attr( $tel_href ); ?>"><?php echo esc_html( $cta_phone_label ); ?></a>
+			<a class="vs-section-contact-btn vs-section-contact-call" href="<?php echo esc_attr( $tel_href ); ?>"><?php echo electro_child_landing_kses_content( $cta_phone_label ); ?></a>
 		<?php endif; ?>
 		<?php if ( $cta_zalo_url && $cta_zalo_label ) : ?>
-			<a class="vs-section-contact-btn vs-section-contact-zalo" href="<?php echo esc_attr( electro_child_landing_esc_href( $cta_zalo_url ) ); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html( $cta_zalo_label ); ?></a>
+			<a class="vs-section-contact-btn vs-section-contact-zalo" href="<?php echo esc_attr( electro_child_landing_esc_href( $cta_zalo_url ) ); ?>" target="_blank" rel="noopener noreferrer"><?php echo electro_child_landing_kses_content( $cta_zalo_label ); ?></a>
 		<?php endif; ?>
 	</div>
 </div>

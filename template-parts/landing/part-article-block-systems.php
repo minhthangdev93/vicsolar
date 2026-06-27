@@ -14,10 +14,10 @@ $cards   = electro_child_landing_article_get_repeater( 's10_article_b4_cards' );
 ?>
 <section id="h2-4" class="vns-a-sec">
 	<?php if ( $heading ) : ?>
-		<h2 id="h2-4-h"><?php echo esc_html( $heading ); ?></h2>
+		<h2 id="h2-4-h"><?php echo electro_child_landing_kses_content( $heading ); ?></h2>
 	<?php endif; ?>
 	<?php if ( $intro ) : ?>
-		<p><?php echo esc_html( $intro ); ?></p>
+		<p><?php echo electro_child_landing_kses_content( $intro ); ?></p>
 	<?php endif; ?>
 	<?php if ( ! empty( $cards ) ) : ?>
 		<div class="vns-cmp3">

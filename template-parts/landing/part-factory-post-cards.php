@@ -66,7 +66,7 @@ $post_count               = (int) $factory_cards_query->post_count;
 						<p class="vs-factory-card-excerpt"><?php echo esc_html( $excerpt ); ?></p>
 					<?php endif; ?>
 					<a class="vs-factory-card-link" href="<?php echo esc_url( $permalink ); ?>">
-						<?php echo esc_html( $factory_card_link_label ); ?>
+						<?php echo electro_child_landing_kses_content( $factory_card_link_label ); ?>
 						<span aria-hidden="true">→</span>
 					</a>
 				</div>
